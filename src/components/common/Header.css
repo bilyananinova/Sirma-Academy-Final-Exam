@@ -1,0 +1,17 @@
+.site-header {
+    background: #264DDE;
+    height: 100px;
+    display: flex;
+}
+
+.site-header img {
+    width: 100px;
+    padding: 10px;
+}
+
+.site-header a {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}

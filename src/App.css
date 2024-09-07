@@ -1,0 +1,22 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1400px;
+    margin: auto;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    background: rgb(233, 231, 231);
+}
+
+.site-main {
+    margin: 50px;
+}
+
+a {
+    text-decoration: none;
+}
