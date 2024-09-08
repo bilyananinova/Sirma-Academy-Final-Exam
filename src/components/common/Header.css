@@ -1,6 +1,7 @@
 .site-header {
-    background: #264DDE;
-    height: 100px;
+    background: url('/images/242822574.jpg') no-repeat center center;
+    background-size: cover;
+    height: 150px;
     display: flex;
 }
 
