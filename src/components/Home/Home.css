@@ -9,13 +9,13 @@
     align-items: center;
     justify-content: center;
     width: 380px;
-    height: 150px;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    height: 200px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
     background: rgb(255, 255, 255);
-    color: rgb(38, 57, 77);
     font-weight: 600;
     font-size: 16px;
     margin: 20px;
+    border-radius: 10px;
 }
 
 .match {
@@ -43,13 +43,12 @@
     width: 50px;
     border: 1px solid rgb(128, 128, 128);
     border-radius: 50%;
+    margin-bottom: 10px;
 }
 
-.score {
-    margin: 0 15px;
-    font-size: 16px;
+.home-page .score {
+    font-size: 20px;
 }
-
 
 .team-manager {
     font-weight: 300;

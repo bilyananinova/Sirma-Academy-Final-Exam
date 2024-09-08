@@ -6,7 +6,7 @@ export function matchesInfo(setMatches) {
         .then(data => {
 
             result = JSON.stringify(data).split('\\r\\n');
-            result = result.slice(1, result.length - 1);
+            result = result.slice(1, -1);
 
             result.forEach(m => {
                 let [id, aTeamId, bTeamId, date, score] = m.split(',');

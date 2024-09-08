@@ -6,7 +6,7 @@ export function teamsInfo(setTeams) {
         .then(data => {
 
             result = JSON.stringify(data).split('\\r\\n');
-            result = result.slice(1, result.length);
+            result = result.slice(0, -1);
 
             result.forEach(m => {
                 let [id, name, managerFullName, group] = m.split(',');

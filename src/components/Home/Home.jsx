@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
 import { matchesInfo } from '../../services/matchServices';
 import { teamsInfo } from '../../services/teamsServices';
@@ -11,11 +12,8 @@ export default function Home() {
         (async () => {
             await matchesInfo(setMatches);
             await teamsInfo(setTeams);
-            return;
         })();
-
     }, []);
-    console.log(matches);
 
     return (
         <>
@@ -23,8 +21,8 @@ export default function Home() {
 
                 {matches.map(m =>
 
-                    <div className="match-card" key={m.id}>
-                            <p className='match-date'>{m.date}</p>
+                    <Link to={`/match-details/${m.id}`} className="match-card" key={m.id}>
+                        <p className='match-date'>{m.date}</p>
                         <div className='match'>
                             <div className="team">
                                 <img src={`/images/${teams[m.aTeamId]?.name}.png`} />
@@ -41,7 +39,7 @@ export default function Home() {
                                 <p className="team-manager">Manager: {teams[m.bTeamId]?.managerFullName}</p>
                             </div>
                         </div>
-                    </div>
+                    </Link>
 
                 )}
             </div >
