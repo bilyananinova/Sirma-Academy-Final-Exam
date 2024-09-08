@@ -1,0 +1,86 @@
+.match-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.match-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.team-details {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center
+}
+
+.team-details a {
+    display: flex;
+    align-items: center;
+}
+
+.team-details img {
+    height: 60px;
+    width: 60px;
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 50%;
+    margin: 0 20px;
+}
+
+.team-details p,
+.score {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.teams {
+    display: flex;
+    justify-content: space-between;
+}
+
+.teamA,
+.teamB {
+    margin: 20px;
+    background: url('/images/footbal-background.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    flex: 0 0 40%;
+    padding: 20px 50px;
+}
+
+.teamA li a,
+.teamB li a {
+    color: inherit;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    background: rgb(255, 255, 255);
+    font-weight: 600;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.teamA li:hover,
+.teamB li:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transform: translateY(0.25em);
+    cursor: pointer;
+}
+
+.teamA .player-number,
+.teamB .player-number {
+    background-color: rgb(203, 13, 13);
+    padding: 5px 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.teamA .player-position,
+.teamB .player-position {
+    padding-right: 10px;
+}
