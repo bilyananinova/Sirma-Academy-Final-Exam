@@ -4,6 +4,7 @@ import './MatchDetails.css';
 import { matchesInfo } from "../../services/matchServices";
 import { teamsInfo } from "../../services/teamsServices";
 import { playersInfo } from "../../services/playersServices";
+import { filterPlayersByTeamId, filterTeamById, filterMatchById } from "../../services/filterData";
 
 
 export default function MatchDetails() {
@@ -20,30 +21,18 @@ export default function MatchDetails() {
         })();
     }, []);
 
-    let filterMatchById = (matchId) => {
-        return matches.filter(match => match.id == matchId);
-    };
+    let match = filterMatchById(matches, matchId)[0];
 
-    let filterTeamById = (teamId) => {
-        return teams.filter(team => team.id == teamId);
-    };
+    let aTeam = filterTeamById(teams, match?.aTeamId)[0];
+    let bTeam = filterTeamById(teams, match?.bTeamId)[0];
 
-    let filterPlayersById = (teamId) => {
-        return players.filter(player => player.teamId == teamId);
-    };
-
-    let match = filterMatchById(matchId)[0];
-
-    let aTeam = filterTeamById(match?.aTeamId)[0];
-    let bTeam = filterTeamById(match?.bTeamId)[0];
-    
-    let playersATeam = filterPlayersById(aTeam?.id);
+    let playersATeam = filterPlayersByTeamId(players, aTeam?.id);
     let index = playersATeam.findIndex((p, i) => {
         return i > 0 && p.position == 'GK'
     });
     playersATeam = playersATeam.slice(0, index);
 
-    let playersBTeam = filterPlayersById(bTeam?.id);
+    let playersBTeam = filterPlayersByTeamId(players, bTeam?.id);
     index = playersBTeam.findIndex((p, i) => {
         return i > 0 && p.position == 'GK'
     });

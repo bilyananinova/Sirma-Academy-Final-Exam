@@ -5,6 +5,7 @@ import { playersInfo } from "../../services/playersServices";
 import { recordsInfo } from "../../services/recordsServices";
 import { matchesInfo } from "../../services/matchServices";
 import { teamsInfo } from "../../services/teamsServices";
+import { filterPlayersByPlayerId, filterRecordsByPlayerId } from "../../services/filterData";
 
 
 export default function PlayerDetails() {
@@ -23,14 +24,6 @@ export default function PlayerDetails() {
         })();
     }, []);
 
-    let filterPlayersById = (playerId) => {
-        return players.filter(player => player.id == playerId);
-    };
-
-    let filterRecordsById = (playerId) => {
-        return records.filter(record => record.playerId == playerId);
-    };
-
     let filterMatchesList = (matches, playerRecord) => {
         let result = [];
         playerRecord.forEach(record => {
@@ -43,8 +36,8 @@ export default function PlayerDetails() {
         return result;
     }
 
-    let player = filterPlayersById(playerId)[0];
-    let playerRecord = filterRecordsById(playerId);
+    let player = filterPlayersByPlayerId(players, playerId)[0];
+    let playerRecord = filterRecordsByPlayerId(records, playerId);
     let playerMatchesList = filterMatchesList(matches, playerRecord);
 
     return (
@@ -83,7 +76,7 @@ export default function PlayerDetails() {
                         </Link>
                     ))
                     : <h3>There is no records ...</h3>
-                    }
+                }
             </div>
         </>
     )

@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import './TeamDetails.css'
 import { playersInfo } from '../../services/playersServices';
 import { teamsInfo } from '../../services/teamsServices';
+import { filterPlayersByTeamId, filterTeamById } from '../../services/filterData';
 
 export default function TeamDetails() {
     let { teamId } = useParams();
@@ -16,25 +17,15 @@ export default function TeamDetails() {
         })();
     }, []);
 
-    let filterTeamById = () => {
-        return teams.filter(team => team.id == teamId);
-    };
-
-    let filterPlayersyId = () => {
-        return players.filter(player => player.teamId == teamId);
-    };
-
-
-    let team = filterTeamById(teamId)[0];
-    let playersList = filterPlayersyId();
+    let team = filterTeamById(teams, teamId)[0];
+    let playersList = filterPlayersByTeamId(players, teamId);
 
     return (
         <>
             <h2>Team {team?.name} Details</h2>
             <div className="team-card">
-                <div>
-                    <img src={`/images/${team?.name}.png`} alt="" />
-                </div>
+                <div className='opacity'> </div>
+                <img src={`/images/${team?.name}.png`} alt="" />
                 <div>
                     <h3>{team?.name}</h3>
                     <h4>Manager: {team?.managerFullName}</h4>
@@ -45,8 +36,8 @@ export default function TeamDetails() {
             <ul>
                 {
                     playersList.map(player =>
-                        <li>
-                            <Link to={`/${team?.name}/player/${player?.id}`} >
+                        <li key={player.id}>
+                            <Link to={`/${team?.name}/player/${player?.id}`}>
                                 <p className="player-number">{player.teamNumber}</p>
                                 <p className="player-name">{player.fullName}</p>
                                 <p className="player-position">{player.position}</p>
