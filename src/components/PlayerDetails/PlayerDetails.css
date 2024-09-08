@@ -1,0 +1,67 @@
+.player-card {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    background: rgb(255, 255, 255);
+    align-items: center;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+.player-card div {
+    align-items: center;
+    margin-right: 20px;
+}
+
+.player-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 10px 0;
+}
+
+.player-card h4 {
+    color: rgb(128, 128, 128);
+    font-style: italic;
+    padding: 5px 0;
+}
+
+.player-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 50px auto;
+}
+
+.player-list .match-card {
+    display: inline;
+    height: auto;
+    text-align: center;
+}
+
+.player-list .match-card .match-date {
+    padding-top: 15px;
+    padding-bottom: 0;
+}
+
+.player-list .match {
+    display: block;
+    padding: 20px;
+}
+
+.player-list .match .time {
+    text-align: end;
+    font-weight: 400;
+    color: rgb(108, 107, 107);
+    font-size: 14px;
+    font-style: italic;
+}
+
+.player-list .team {
+    flex-direction: row;
+    align-items: center;
+}
+
+.player-list .team p {
+    margin-left: 20px;
+}
