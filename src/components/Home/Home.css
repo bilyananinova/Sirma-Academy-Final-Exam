@@ -3,6 +3,14 @@
     flex-wrap: wrap;
 }
 
+.filter {
+   margin: 20px;
+}
+
+.filter select {
+    padding: 3px;
+}
+
 .match-card {
     display: flex;
     flex-direction: column;
@@ -54,4 +62,11 @@
     font-weight: 300;
     color: rgb(128, 128, 128);
     font-size: 12px;
+}
+
+@media screen and (max-width: 600px) {
+    .match-card {
+        margin: 20px 0;
+        font-size: 14px;
+    }
 }

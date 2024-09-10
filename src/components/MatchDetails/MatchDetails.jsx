@@ -51,12 +51,12 @@ export default function MatchDetails() {
 
                     <div className="score">{match?.score}</div>
 
-                    <div className="team-details">
-                        <Link to={`/team/${match?.bTeamId}`}>
+                    <Link to={`/team/${match?.bTeamId}`}>
+                        <div className="team-details">
                             <p>{bTeam?.name}</p>
                             <img src={`/images/${bTeam?.name}.png`} />
-                        </Link>
-                    </div>
+                        </div>
+                    </Link>
                 </div>
 
                 <div className="teams">

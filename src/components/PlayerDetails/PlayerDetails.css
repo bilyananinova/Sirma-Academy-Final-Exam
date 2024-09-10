@@ -65,3 +65,20 @@
 .player-list .team p {
     margin-left: 20px;
 }
+
+
+@media screen and (max-width: 600px) {
+    .player-card {
+       max-width: 90%;
+    }
+
+    .player-card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .player-list .match-card {
+        margin: 20px auto;
+        width: 320px;
+    }
+}

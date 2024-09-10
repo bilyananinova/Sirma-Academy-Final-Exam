@@ -90,3 +90,20 @@
 .teamB .player-position {
     padding-right: 10px;
 }
+
+@media screen and (max-width: 600px) {
+    .match-details .team-details p {
+        display: none;
+    }
+
+    .teams {
+        flex-direction: column;
+    }
+
+    .teamA, .teamB {
+        flex: auto;
+        width: 80%;
+        margin: 20px auto;
+
+    }
+}
