@@ -60,17 +60,17 @@ export default function PlayerDetails() {
                         <Link to={`/match-details/${m.id}`} className="match-card" key={m.id}>
                             <p className='match-date'>{m.date}</p>
                             <div className='match'>
-
+                                {/* decrement teams[index] because teamId in matches array starts at 1 and the index of the teams array starts at 0 */}
                                 <div className="team">
-                                    <img src={`/images/${teams[m.aTeamId]?.name}.png`} />
-                                    <p>{teams[m.aTeamId]?.name}</p>
+                                    <img src={`/images/${teams[m.aTeamId - 1]?.name}.png`} />
+                                    <p>{teams[m.aTeamId - 1]?.name}</p>
                                 </div>
 
                                 <p className="time"><span>from: {playerRecord[i].fromMinutes}min, to: {playerRecord[i].toMinutes}min</span></p>
 
                                 <div className="team">
-                                    <img src={`/images/${teams[m.bTeamId]?.name}.png`} />
-                                    <p>{teams[m.bTeamId]?.name}</p>
+                                    <img src={`/images/${teams[m.bTeamId - 1]?.name}.png`} />
+                                    <p>{teams[m.bTeamId - 1]?.name}</p>
                                 </div>
                             </div>
                         </Link>

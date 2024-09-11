@@ -4,14 +4,17 @@
 }
 
 .filter {
-   margin: 20px;
+    margin: 20px;
+    display: flex;
 }
 
 .filter select {
     padding: 3px;
+    margin: 0 20px 0 5px;
 }
 
-.match-card {
+.match-card,
+.team-card-home {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,7 +49,8 @@
     align-items: center;
 }
 
-.team img {
+.team img,
+.team-card-home img {
     height: 50px;
     width: 50px;
     border: 1px solid rgb(128, 128, 128);
@@ -65,8 +69,22 @@
 }
 
 @media screen and (max-width: 600px) {
+
+    .home-page {
+        justify-content: center;
+    }
+
     .match-card {
         margin: 20px 0;
         font-size: 14px;
+    }
+
+    .filter {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filter select {
+        margin-bottom: 10px;
     }
 }

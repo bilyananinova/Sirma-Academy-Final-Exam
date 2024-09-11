@@ -1,3 +1,5 @@
+export let dates = new Set();
+
 export function matchesInfo(setMatches) {
     let result;
 
@@ -15,6 +17,8 @@ export function matchesInfo(setMatches) {
                 // console.log(new Date(date));  //Fri Jun 14 2024 00:00:00 GMT+0300 (Eastern European Summer Time)
                 // console.log(new Date(date).toUTCString()); //Thu, 13 Jun 2024 21:00:00 GMT
 
+                formatedDate = formatedDate.slice(0, formatedDate.length - 13);
+                dates.add(formatedDate);
 
                 setMatches((prevData => {
                     let result = [...prevData,
@@ -22,7 +26,7 @@ export function matchesInfo(setMatches) {
                         id: Number(id),
                         aTeamId: Number(aTeamId),
                         bTeamId: Number(bTeamId),
-                        date: formatedDate.slice(0, formatedDate.length - 13),
+                        date: formatedDate,
                         score
                     }];
                     return result;
